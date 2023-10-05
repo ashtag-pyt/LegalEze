@@ -1,0 +1,23 @@
+#title{
+    background-image: linear-gradient(#0085FF,#000000);
+}
+
+.brnd{
+    font-family:"Montserrat";
+}
+
+.image{
+    height:600px;
+}
+
+.body{
+    overflow: scroll;
+}
+
+#features{
+    padding: 7% 15%;
+    text-align: center;
+   
+    background-color:#ffffff;
+    color:#fff;
+}
