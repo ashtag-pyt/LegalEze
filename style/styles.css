@@ -17,6 +17,14 @@
     z-index: 1000;
 }
 
+.login-button{
+    background-color: #0085FF;
+}
+
+.close-button{
+    background-color: #000000;
+}
+
 
 .popup-content {
     position: absolute;
@@ -39,26 +47,49 @@
     overflow: scroll;
 }
 
-#features{
-   
-    text-align: center;
-    padding:0px 7px 0px 7px;
-    background-color:#ffffff;
-    color:#e30a0a;
-}
+      /* Custom styles for the carousel */
+      .carousel-container {
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
 
-.slider-container {
-    overflow: hidden;
-}
+    .carousel-slide {
+        display: none;
+    }
 
-.slider-wrapper {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
+    .carousel-slide.active {
+        display: block;
+    }
 
-.slide {
-    min-width: 100%;
-}
+    .carousel-image {
+        max-width: 60%;
+        height: auto;
+    }
+
+    #prevButton,#nextButton{
+        font-family: "Montserrat";
+        font-weight: 500;
+        font-size:xx-large;
+    }
+
+
+
+    .carousel-description {
+        text-align: center;
+        color: #000000;
+        font-size:x-large;
+        font-family: "Montserrat";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 16px;
+    }
+
+
+
+
 
 #bottom{
     background-image: linear-gradient(#000000,#0085FF);

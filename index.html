@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/style/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
+
 </head>
 <body>
 
@@ -43,9 +44,9 @@
                 <label for="password" class="block text-gray-700">Password</label>
                 <input type="password" id="password" class="w-full border rounded px-3 py-2" placeholder="Your password">
             </div>
-            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Login</button>
+            <button type="submit" class=" login-button w-full  bg-blue-700 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded-full">Login</button>
         </form>
-        <button id="closePopupButton" class="mt-4 w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">Close</button>
+        <button id="closePopupButton" class=" close-button border border-black mt-4 w-full text-white  hover:bg-white hover:text-black font-bold py-2 px-4 rounded-full">Close</button>
     </div>
 </div>
 
@@ -72,9 +73,41 @@
     <div class="lg:w-1/2 pt-10">
       <h1 class="text-3xl lg:text-4xl text-center font-bold ml-6 pt-20">Get Easy Simplification And Translation For Your Docs Here</h1>
   
-      <div class="flex justify-center pt-6">
+      <!-- <div class="flex justify-center pt-6">
         <a href="file.html" class="mt-4 lg:mt-8  px-6 py-3 lg:px-8 lg:py-4 bg-black text-white text-lg lg:text-xl rounded-full hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-black" >Select a File</a>
-      </div>
+      </div> -->
+
+      <!-- <div class=" flex items-center justify-center"> -->
+        <!-- File input button -->
+        <!-- <label for="fileInput" class="mt-4 lg:mt-8  px-6 py-3 lg:px-8 lg:py-4 bg-black text-white text-lg lg:text-xl rounded-full hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-black">
+            <i class="fas fa-upload mr-2"></i>Upload File
+        </label>
+        <input type="file" id="fileInput" class="hidden">
+    </div> -->
+
+    
+    <div class=" flex items-center justify-center">
+      <!-- File input button -->
+      <label for="fileInput" class="mt-4 lg:mt-8 px-6 py-3 lg:px-8 lg:py-4 bg-black text-white text-lg lg:text-xl rounded-full hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-black cursor-pointer">
+          <i class="fas fa-upload mr-2"></i>Upload File
+      </label>
+      <input type="file" id="fileInput" class="hidden" accept=".pdf, .docx, .txt"> <!-- Accept specific file types -->
+  </div>
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+
+    fileInput.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const fileURL = URL.createObjectURL(file);
+            // Redirect to file.html with the file URL as a query parameter
+            window.location.href = `file.html?pdf=${encodeURIComponent(fileURL)}`;
+        }
+    });
+</script>
+
+
     </div>
     
     
@@ -87,75 +120,61 @@
 
 <!-- features carousel -->
   
- 
-
-
-    <!-- <title>Photo Slider</title> -->
-    <!-- Link to the Tailwind CSS CDN -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet"> -->
-    <!-- Add your custom CSS for the slider here -->
-    <!-- <style>
-       
-    </style> -->
-<!-- </head> -->
-    <section>
-    <div class="w-screen h-screen flex items-center justify-center">
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <!-- Slide 1 -->
-                <div class="slide">
-                    <img src="https://via.placeholder.com/800x400?text=Slide%201" alt="Slide 1">
-                </div>
-                <!-- Slide 2 -->
-                <div class="slide">
-                    <img src="https://via.placeholder.com/800x400?text=Slide%202" alt="Slide 2">
-                </div>
-                <!-- Slide 3 -->
-                <div class="slide">
-                    <img src="https://via.placeholder.com/800x400?text=Slide%203" alt="Slide 3">
-                </div>
-                <!-- Slide 4 -->
-                <div class="slide">
-                    <img src="https://via.placeholder.com/800x400?text=Slide%204" alt="Slide 4">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript for the slider -->
-    <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const sliderWrapper = document.querySelector('.slider-wrapper');
-
-        function nextSlide() {
-            currentIndex++;
-            if (currentIndex === slides.length) {
-                currentIndex = 0;
-            }
-            updateSlider();
-        }
-
-        function previousSlide() {
-            currentIndex--;
-            if (currentIndex < 0) {
-                currentIndex = slides.length - 1;
-            }
-            updateSlider();
-        }
-
-        function updateSlider() {
-            const translateX = -currentIndex * 100;
-            sliderWrapper.style.transform = `translateX(${translateX}%)`;
-        }
-
-        setInterval(nextSlide, 3000); // Change slide every 3 seconds
-    </script>
-    </section>
-
-
+<div class="carousel-container relative">
+  <div class="carousel-slide active">
+      <img src="/img/easy to use.png" alt="Image 1" class="carousel-image ml-48 mt-14 mb-14">
+      <div class="carousel-description">Easy to Use</div>
+  </div>
+  <div class="carousel-slide">
+      <img src="/img/summary img.png" alt="Image 2" class="carousel-image ml-48 mt-14 mb-14">
+      <div class="carousel-description">Summarize</div>
+  </div>
+  <div class="carousel-slide">
+      <img src="/img/translation img 2.png" alt="Image 3" class="carousel-image ml-48 mt-14 mb-14">
+      <div class="carousel-description">Translate</div>
+  </div>
+  <!-- Add more slides as needed -->
   
-  
+  <button id="prevButton" class="absolute left-0 top-1/2 transform -translate-y-1/2 p-2  text-black rounded-full shadow-md">&#60;</button>
+  <button id="nextButton" class="absolute right-0 top-1/2 transform -translate-y-1/2 p-2  text-black rounded-full shadow-md">></button>
+</div>
+
+<script>
+// JavaScript code for the carousel
+const slides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+let currentIndex = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
+}
+
+function showNextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+function showPrevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
+
+nextButton.addEventListener('click', showNextSlide);
+prevButton.addEventListener('click', showPrevSlide);
+
+
+// Automatic timer for sliding
+setInterval(showNextSlide, 2000); // Slide every 3 seconds
+</script>
+
+
+
 
 
 <!-- bottom page -->
