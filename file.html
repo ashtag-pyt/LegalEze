@@ -1,1 +1,53 @@
-     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* Left-side panel for the document viewer */
+.viewer-panel {
+    flex: 1;
+    background-color: #f1f1f1;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+/* Right-side content area (you can add content here) */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Style the document viewer */
+.document-viewer {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+    </style>
+</head>
+<body>
+    <!-- Left-side panel for the document viewer -->
+    <div class="viewer-panel">
+        <iframe src="https://www.example.com/document.pdf" class="document-viewer" frameborder="0"></iframe>
+    </div>
+
+    <!-- Right-side content area (you can add content here) -->
+    <div class="content">
+        <!-- Your content goes here -->
+        <h1>Welcome to the Document Viewer</h1>
+        <p>This is the right-side content area.</p>
+    </div>
+</body>
+</html>

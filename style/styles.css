@@ -6,6 +6,31 @@
     font-family:"Montserrat";
 }
 
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+
 .image{
     height:600px;
 }
@@ -15,9 +40,60 @@
 }
 
 #features{
-    padding: 7% 15%;
-    text-align: center;
    
+    text-align: center;
+    padding:0px 7px 0px 7px;
     background-color:#ffffff;
-    color:#fff;
+    color:#e30a0a;
+}
+
+.slider-container {
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+#bottom{
+    background-image: linear-gradient(#000000,#0085FF);
+}
+
+
+
+
+/* Style the FAQ container */
+.faq {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the questions */
+.question {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Style the question text */
+.question h2 {
+    margin: 0;
+}
+
+/* Hide the answers by default */
+.answer {
+    display: none;
+}
+
+/* Show answers when questions are clicked */
+.question.active .answer {
+    display: block;
 }
